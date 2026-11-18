@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#123325">
+  <meta name="description" content="NBA win probabilities, team strength rankings, and model performance.">
+  <title>NBA Predictions</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./site.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="header">
+    <div class="shell masthead">
+      <a class="brand" href="#predictions" aria-label="NBA Predictions home">
+        <span class="brand-mark" aria-hidden="true"><i></i></span>
+        <span>NBA<span class="brand-accent">.</span> Forecast</span>
+      </a>
+      <div class="update" id="update" role="status"><span class="indicator"></span><span>Loading feed</span></div>
+    </div>
+    <div class="shell hero">
+      <div><p class="hero-label" id="slate-date">NBA forecast dashboard</p><h1>NBA<br class="mobile-break"> Predictions<span>.</span></h1></div>
+      <p class="hero-detail">Forecasts are recorded at least 90 minutes before tipoff.</p>
+    </div>
+  </header>
+  <nav class="nav" aria-label="Dashboard">
+    <div class="shell nav-inner">
+      <a href="#predictions" data-view="predictions" aria-current="page">Predictions</a>
+      <a href="#rankings" data-view="rankings">Rankings</a>
+      <a href="#performance" data-view="performance">Performance</a>
+    </div>
+  </nav>
+  <main class="shell" id="main">
+    <aside class="notice" id="notice" hidden></aside>
+    <section id="predictions" data-panel>
+      <div class="section-head">
+        <div><h2 id="slate-title">Today’s Predictions</h2><p id="slate-summary">Fetching the latest verified slate.</p></div>
+        <div class="toggle" aria-label="Prediction model">
+          <button data-model="V1" aria-pressed="true">V1</button>
+          <button data-model="PA3" aria-pressed="false">PA3</button>
+          <button data-model="compare" aria-pressed="false">Compare</button>
+        </div>
+      </div>
+      <div class="legend" id="model-legend"></div>
+      <div id="games" class="games"></div>
+    </section>
+    <section id="rankings" data-panel hidden>
+      <div class="section-head">
+        <div><h2>Team Strength Rankings</h2><p id="ratings-date"></p></div>
+        <label class="select-label">Sort by <select id="rank-sort">
+          <option value="strength">Team strength</option><option value="wins">Wins</option>
+          <option value="pct">Win percentage</option><option value="net">Adjusted net rating</option>
+          <option value="offense">Adjusted offense</option><option value="defense">Adjusted defense</option>
+          <option value="sos">Schedule strength</option>
+        </select></label>
+      </div>
+      <div id="ranking-content"></div>
+    </section>
+    <section id="performance" data-panel hidden>
+      <div class="section-head"><div><h2>Model Performance</h2><p>Historical scores and verified forecasts tracked before tipoff.</p></div></div>
+      <div id="performance-content"></div>
+    </section>
+    <noscript><p class="notice">JavaScript is required to display the prediction feed.</p></noscript>
+  </main>
+  <footer class="shell footer">
+    <span>NBA Forecast</span>
+    <p>Independent model dashboard. All times Eastern.</p>
+  </footer>
+</body>
+</html>
