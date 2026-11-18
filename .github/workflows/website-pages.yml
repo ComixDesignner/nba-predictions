@@ -26,9 +26,11 @@ jobs:
       - name: Validate the website feed and package only public files
         shell: bash
         run: |
-          node --experimental-default-type=module --input-type=module - <<'JS'
+          cp site.js "$RUNNER_TEMP/site-validation.mjs"
+          node --input-type=module - <<'JS'
           import fs from 'node:fs';
-          import { validateFeed } from './site.js';
+          import { pathToFileURL } from 'node:url';
+          const { validateFeed } = await import(pathToFileURL(process.env.RUNNER_TEMP + '/site-validation.mjs'));
           const feed = JSON.parse(fs.readFileSync('data/predictions.json', 'utf8'));
           if (!validateFeed(feed)) throw new Error('Public feed failed validation');
           console.log('The public feed passed schema, dates and probability validation.');
