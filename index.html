@@ -8,6 +8,8 @@
   <title>NBA Predictions</title>
   <link rel="stylesheet" href="./style.css">
   <script type="module" src="./site.js"></script>
+  <link rel="stylesheet" href="./betting.css">
+  <script type="module" src="./betting.mjs"></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -29,6 +31,7 @@
       <a href="#predictions" data-view="predictions" aria-current="page">Predictions</a>
       <a href="#rankings" data-view="rankings">Rankings</a>
       <a href="#performance" data-view="performance">Performance</a>
+      <a href="#betting" data-view="betting">Betting</a>
     </div>
   </nav>
   <main class="shell" id="main">
@@ -60,6 +63,53 @@
     <section id="performance" data-panel hidden>
       <div class="section-head"><div><h2>Model Performance</h2><p>Historical scores and verified forecasts tracked before tipoff.</p></div></div>
       <div id="performance-content"></div>
+    </section>
+    <section id="betting" data-panel hidden>
+      <div class="section-head">
+        <div>
+          <h2>Betting Analysis</h2>
+          <p>Experimental estimates for hypothetical NBA moneyline bets.</p>
+        </div>
+      </div>
+      <div class="bet-refresh">
+        <a id="bet-refresh" class="bet-refresh-button" href="https://github.com/ComixDesignner/nba-prediction-engine/actions/workflows/nba-betting-refresh.yml" target="_blank" rel="noopener noreferrer">Refresh Picks</a>
+        <div class="bet-refresh-meta">
+          <p id="bet-last">Last successful refresh unavailable</p>
+          <p id="bet-credits">API credits unavailable</p>
+        </div>
+      </div>
+      <p id="bet-refresh-result" class="bet-refresh-result" role="status"></p>
+      <p id="bet-status" class="bet-status" role="status">Checking published picks…</p>
+      <div class="bet-controls">
+        <label>Model <select id="bet-model"><option value="V1">V1 · Baseline</option><option value="PA3">PA3 · Experimental</option></select></label>
+        <label>Sportsbook <select id="bet-book"><option value="">All books</option></select></label>
+        <label>Rank by <select id="bet-sort"><option value="ev">Estimated value</option><option value="probability">Hit chance</option><option value="evLow">Stress-case value</option></select></label>
+        <label>Hypothetical stake ($) <input id="bet-stake" type="number" step="any" min="0" max="1000000" inputmode="decimal" placeholder="Optional"></label>
+      </div>
+      <p class="bet-note">For one bet, hit chance is also the chance of a positive payout. Estimated value reflects the price paid. The stress case uses the available model probabilities and shifts them by five percentage points.</p>
+      <section class="bet-area" aria-labelledby="bet-straight-title">
+        <h3 id="bet-straight-title">Straight Bets</h3>
+        <p id="bet-value" class="bet-summary"></p>
+        <div id="bet-straights"></div>
+      </section>
+      <section class="bet-area" aria-labelledby="bet-parlays-title">
+        <div class="bet-section-head">
+          <h3 id="bet-parlays-title">Parlay Comparison</h3>
+          <div class="bet-controls">
+            <label>Legs <select id="bet-legs"><option>2</option><option>3</option></select></label>
+            <label>Teams <select id="bet-filter"><option value="all">Any</option><option value="favorites">Favorites only</option><option value="underdogs">Underdogs with positive estimated EV</option></select></label>
+          </div>
+        </div>
+        <p class="bet-note">Parlays use theoretical same-book payouts. Hit estimates assume independence. The dependence range shows how far the true hit rate could vary even if the individual model probabilities were exact.</p>
+        <div id="bet-parlays"></div>
+      </section>
+      <section class="bet-area" aria-labelledby="bet-builder-title">
+        <h3 id="bet-builder-title">Custom Parlay Builder</h3>
+        <p class="bet-note">Choose a sportsbook and up to 12 different games. Each team may appear in only one selected game.</p>
+        <div class="bet-actions"><button type="button" id="bet-winners">Use all quoted model favorites</button><button type="button" id="bet-clear">Clear</button></div>
+        <div id="bet-builder"></div>
+        <div id="bet-combination" aria-live="polite"></div>
+      </section>
     </section>
     <noscript><p class="notice">JavaScript is required to display the prediction feed.</p></noscript>
   </main>
