@@ -8,4 +8,12 @@ Game dates and times use America/New_York. The dashboard displays the private en
 
 ## GitHub Pages
 
-This repository uses regular static files at the root and works under the project subpath. For launch after review, select **Deploy from a branch**, **main**, and **/(root)** under **Settings → Pages**. Pages is disabled during review. No build service, personal computer, or VPS is required.
+The workflow checks the public feed and packages the static site on pushes to `main`. Deployment stays off during review.
+
+After launch is approved:
+
+1. Under **Settings → Pages**, select **GitHub Actions** as the source.
+2. Create the public repository’s Actions variable `NBA_PAGES_ENABLED` with value `true`.
+3. Run **Validate and prepare NBA website** on `main`. The deployment job then provides the Pages URL. Future data commits trigger the same workflow automatically.
+
+No build service, personal computer, or VPS is required.
