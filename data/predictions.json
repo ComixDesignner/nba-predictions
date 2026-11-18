@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-11-18T01:27:40.031079+00:00",
+  "updated_at_utc": "2026-11-18T02:18:34.033325+00:00",
   "slate_date_et": "2026-11-17",
   "ratings_through_et": "2026-11-16",
   "teams": [
@@ -251,21 +251,21 @@
       "status": "scheduled",
       "score": null,
       "forecasts": {
+        "PA3": {
+          "model_version": "PA3_roster",
+          "home_probability": 0.8183062652587934,
+          "away_probability": 0.18169373474120665,
+          "home_margin": 11.302435280284907,
+          "recorded_at_utc": "2026-11-18T02:18:34.033198+00:00",
+          "injury_report_at_utc": "2026-11-18T02:00:00+00:00"
+        },
         "V1": {
           "model_version": "V1_reference",
           "home_probability": 0.8492178437149684,
           "away_probability": 0.15078215628503155,
-          "home_margin": 13.295471104731106,
-          "recorded_at_utc": "2026-11-18T01:27:40.030923+00:00",
+          "home_margin": 13.29547110473111,
+          "recorded_at_utc": "2026-11-18T02:18:34.033198+00:00",
           "injury_report_at_utc": null
-        },
-        "PA3": {
-          "model_version": "PA3_roster",
-          "home_probability": 0.8183062652587932,
-          "away_probability": 0.18169373474120676,
-          "home_margin": 11.302435280284893,
-          "recorded_at_utc": "2026-11-18T01:27:40.030923+00:00",
-          "injury_report_at_utc": "2026-11-18T01:15:00+00:00"
         }
       }
     }
