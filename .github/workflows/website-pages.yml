@@ -17,27 +17,36 @@ concurrency:
   cancel-in-progress: false
 jobs:
   prepare:
+    outputs:
+      fresh: ${{ steps.validate.outputs.fresh }}
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
       - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
         with:
           persist-credentials: false
-      - name: Validate the website feed and package only public files
+      - name: Validate the website feed and stage allowlisted files
+        id: validate
         shell: bash
         run: |
           cp site.js "$RUNNER_TEMP/site-validation.mjs"
           node --input-type=module - <<'JS'
           import fs from 'node:fs';
           import { pathToFileURL } from 'node:url';
-          const { validateFeed } = await import(pathToFileURL(process.env.RUNNER_TEMP + '/site-validation.mjs'));
+          const { validateFeed, freshness } = await import(pathToFileURL(process.env.RUNNER_TEMP + '/site-validation.mjs'));
           const feed = JSON.parse(fs.readFileSync('data/predictions.json', 'utf8'));
           if (!validateFeed(feed)) throw new Error('Public feed failed validation');
           console.log('The public feed passed schema, dates and probability validation.');
+          const fresh = freshness(feed) === 'current';
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, 'fresh=' + fresh + '\n');
+          if (!fresh) console.log('::notice::Feed is stale. Deployment is held until a fresh update.');
           JS
           python3 - <<'PY'
           import csv
           import json
+          import os
+          import shutil
+          import stat
           from pathlib import Path
 
           feed = json.loads(Path('data/predictions.json').read_text())
@@ -53,16 +62,54 @@ jobs:
               rows = csv.DictReader(file)
               if rows.fieldnames != fields or list(rows) != expected:
                   raise ValueError('Public CSV does not match the validated JSON')
+          files = ('index.html', 'style.css', 'site.js', 'data/predictions.json', 'data/predictions.csv')
+          target = Path(os.environ['RUNNER_TEMP']) / 'nba-pages'
+          target.mkdir()
+          for name in files:
+              source = Path(name)
+              attrs = source.lstat()
+              if not stat.S_ISREG(attrs.st_mode) or attrs.st_nlink != 1 or source.resolve() != Path.cwd() / source:
+                  raise ValueError(f'Expected a plain checked-out file: {name}')
+              staged = target / name
+              staged.parent.mkdir(parents=True, exist_ok=True)
+              shutil.copyfile(source, staged)
           PY
-          tar --format=ustar -cf "$RUNNER_TEMP/artifact.tar" index.html style.css site.js data/predictions.json data/predictions.csv
-      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+      - name: Upload the GitHub Pages artifact
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
         with:
+          path: ${{ runner.temp }}/nba-pages
           name: github-pages
-          path: ${{ runner.temp }}/artifact.tar
-          if-no-files-found: error
           retention-days: 1
+      - name: Audit the Pages archive
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib
+          import os
+          from pathlib import Path, PurePosixPath
+          import tarfile
+
+          files = {'index.html', 'style.css', 'site.js', 'data/predictions.json', 'data/predictions.csv'}
+          temp = Path(os.environ['RUNNER_TEMP'])
+          seen = set()
+          with tarfile.open(temp / 'artifact.tar') as archive:
+              for member in archive:
+                  path = PurePosixPath(member.name)
+                  name = path.as_posix()
+                  if member.isdir() and name in {'.', 'data'}:
+                      continue
+                  if not member.isfile() or name not in files or name in seen:
+                      raise ValueError(f'Unexpected Pages archive entry: {member.name}')
+                  payload = archive.extractfile(member).read()
+                  if payload != (temp / 'nba-pages' / name).read_bytes():
+                      raise ValueError(f'Pages archive bytes differ from validated source: {name}')
+                  print(hashlib.sha256(payload).hexdigest(), name)
+                  seen.add(name)
+          if seen != files:
+              raise ValueError('Pages archive is missing allowlisted files')
+          PY
   deploy:
-    if: vars.NBA_PAGES_ENABLED == 'true' && github.repository == 'ComixDesignner/nba-predictions' && github.ref == 'refs/heads/main'
+    if: needs.prepare.outputs.fresh == 'true' && vars.NBA_PAGES_ENABLED == 'true' && github.repository == 'ComixDesignner/nba-predictions' && github.ref == 'refs/heads/main'
     needs: prepare
     permissions:
       pages: write
