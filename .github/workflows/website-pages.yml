@@ -1,0 +1,76 @@
+name: Validate and prepare NBA website
+'on':
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - index.html
+      - style.css
+      - site.js
+      - data/predictions.json
+      - data/predictions.csv
+      - .github/workflows/website-pages.yml
+permissions:
+  contents: read
+concurrency:
+  group: nba-github-pages
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+        with:
+          persist-credentials: false
+      - name: Validate the website feed and package only public files
+        shell: bash
+        run: |
+          node --experimental-default-type=module --input-type=module - <<'JS'
+          import fs from 'node:fs';
+          import { validateFeed } from './site.js';
+          const feed = JSON.parse(fs.readFileSync('data/predictions.json', 'utf8'));
+          if (!validateFeed(feed)) throw new Error('Public feed failed validation');
+          console.log('The public feed passed schema, dates and probability validation.');
+          JS
+          python3 - <<'PY'
+          import csv
+          import json
+          from pathlib import Path
+
+          feed = json.loads(Path('data/predictions.json').read_text())
+          fields = ['event_id', 'tip_at_utc', 'away_team_id', 'home_team_id', 'model_version',
+                    'home_probability', 'away_probability', 'home_margin', 'recorded_at_utc', 'injury_report_at_utc']
+          expected = []
+          for game in feed['games']:
+              for forecast in game['forecasts'].values():
+                  row = dict(event_id=game['id'], tip_at_utc=game['tip_at_utc'],
+                             away_team_id=game['away'], home_team_id=game['home'], **forecast)
+                  expected.append({k: '' if row[k] is None else str(row[k]) for k in fields})
+          with open('data/predictions.csv', newline='') as file:
+              rows = csv.DictReader(file)
+              if rows.fieldnames != fields or list(rows) != expected:
+                  raise ValueError('Public CSV does not match the validated JSON')
+          PY
+          tar --format=ustar -cf "$RUNNER_TEMP/artifact.tar" index.html style.css site.js data/predictions.json data/predictions.csv
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: github-pages
+          path: ${{ runner.temp }}/artifact.tar
+          if-no-files-found: error
+          retention-days: 1
+  deploy:
+    if: vars.NBA_PAGES_ENABLED == 'true' && github.repository == 'ComixDesignner/nba-predictions' && github.ref == 'refs/heads/main'
+    needs: prepare
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.publish.outputs.page_url }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Publish the reviewed website
+        id: publish
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5
