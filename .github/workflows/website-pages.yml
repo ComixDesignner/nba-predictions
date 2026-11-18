@@ -19,6 +19,7 @@ jobs:
   prepare:
     outputs:
       fresh: ${{ steps.validate.outputs.fresh }}
+      graded: ${{ steps.validate.outputs.graded }}
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
@@ -39,6 +40,8 @@ jobs:
           console.log('The public feed passed schema, dates and probability validation.');
           const fresh = freshness(feed) === 'current';
           fs.appendFileSync(process.env.GITHUB_OUTPUT, 'fresh=' + fresh + '\n');
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, 'graded=' + (feed.prospective.graded > 0) + '\n');
+          if (feed.prospective.graded === 0) console.log('::notice::Deployment is held until the validated feed contains a verified Phase 3 outcome.');
           if (!fresh) console.log('::notice::Feed is stale. Deployment is held until a fresh update.');
           JS
           python3 - <<'PY'
@@ -109,7 +112,7 @@ jobs:
               raise ValueError('Pages archive is missing allowlisted files')
           PY
   deploy:
-    if: needs.prepare.outputs.fresh == 'true' && vars.NBA_PAGES_ENABLED == 'true' && github.repository == 'ComixDesignner/nba-predictions' && github.ref == 'refs/heads/main'
+    if: needs.prepare.outputs.fresh == 'true' && needs.prepare.outputs.graded == 'true' && vars.NBA_PAGES_ENABLED == 'true' && github.repository == 'ComixDesignner/nba-predictions' && github.ref == 'refs/heads/main'
     needs: prepare
     permissions:
       pages: write
