@@ -9,6 +9,11 @@ name: Validate and prepare NBA website
       - site.js
       - data/predictions.json
       - data/predictions.csv
+      - betting.mjs
+      - betting.css
+      - value.mjs
+      - manual.mjs
+      - data/betting-refresh-v1.json
       - .github/workflows/website-pages.yml
 permissions:
   contents: read
@@ -65,7 +70,7 @@ jobs:
               rows = csv.DictReader(file)
               if rows.fieldnames != fields or list(rows) != expected:
                   raise ValueError('Public CSV does not match the validated JSON')
-          files = ('index.html', 'style.css', 'site.js', 'data/predictions.json', 'data/predictions.csv')
+          files = ('index.html', 'style.css', 'site.js', 'data/predictions.json', 'data/predictions.csv', 'betting.mjs', 'betting.css', 'value.mjs', 'manual.mjs', 'data/betting-refresh-v1.json')
           target = Path(os.environ['RUNNER_TEMP']) / 'nba-pages'
           target.mkdir()
           for name in files:
@@ -77,6 +82,19 @@ jobs:
               staged.parent.mkdir(parents=True, exist_ok=True)
               shutil.copyfile(source, staged)
           PY
+      - name: Validate the staged betting receipt independently
+        shell: bash
+        run: |
+          node --input-type=module - <<'JS'
+          import fs from 'node:fs';
+          import { idleReceipt, validReceipt } from './manual.mjs';
+          const receipt = process.env.RUNNER_TEMP + '/nba-pages/data/betting-refresh-v1.json';
+          try {
+            if (validReceipt(JSON.parse(fs.readFileSync(receipt, 'utf8')))) process.exit(0);
+          } catch { /* A malformed betting result must not interrupt prediction delivery. */ }
+          console.log('::warning::Invalid betting receipt omitted from the Pages build.');
+          fs.writeFileSync(receipt, JSON.stringify(idleReceipt()) + '\n');
+          JS
       - name: Upload the GitHub Pages artifact
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
         with:
@@ -92,7 +110,7 @@ jobs:
           from pathlib import Path, PurePosixPath
           import tarfile
 
-          files = {'index.html', 'style.css', 'site.js', 'data/predictions.json', 'data/predictions.csv'}
+          files = {'index.html', 'style.css', 'site.js', 'data/predictions.json', 'data/predictions.csv', 'betting.mjs', 'betting.css', 'value.mjs', 'manual.mjs', 'data/betting-refresh-v1.json'}
           temp = Path(os.environ['RUNNER_TEMP'])
           seen = set()
           with tarfile.open(temp / 'artifact.tar') as archive:
