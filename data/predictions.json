@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-11-19T20:59:50.428908+00:00",
+  "updated_at_utc": "2026-11-20T02:38:55.847409+00:00",
   "slate_date_et": "2026-11-19",
   "ratings_through_et": "2026-11-18",
   "teams": [
@@ -161,7 +161,7 @@
       "tip_at_utc": "2026-11-20T01:00:00+00:00",
       "away": "1610612744",
       "home": "1610612763",
-      "status": "scheduled",
+      "status": "live",
       "score": null,
       "forecasts": {
         "V1": {
@@ -187,7 +187,7 @@
       "tip_at_utc": "2026-11-20T01:00:00+00:00",
       "away": "1610612757",
       "home": "1610612749",
-      "status": "scheduled",
+      "status": "live",
       "score": null,
       "forecasts": {
         "V1": {
@@ -213,7 +213,7 @@
       "tip_at_utc": "2026-11-20T01:00:00+00:00",
       "away": "1610612752",
       "home": "1610612750",
-      "status": "scheduled",
+      "status": "live",
       "score": null,
       "forecasts": {
         "V1": {
@@ -231,7 +231,7 @@
       "tip_at_utc": "2026-11-20T01:00:00+00:00",
       "away": "1610612746",
       "home": "1610612759",
-      "status": "scheduled",
+      "status": "live",
       "score": null,
       "forecasts": {
         "PA3": {
