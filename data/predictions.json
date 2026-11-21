@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-11-21T08:47:06.142327+00:00",
+  "updated_at_utc": "2026-11-21T16:58:17.442859+00:00",
   "slate_date_et": "2026-11-21",
   "ratings_through_et": "2026-11-20",
   "teams": [
@@ -195,16 +195,16 @@
           "home_probability": 0.5740929155297921,
           "away_probability": 0.42590708447020786,
           "home_margin": 2.3863497965526337,
-          "recorded_at_utc": "2026-11-21T08:47:06.141988+00:00",
+          "recorded_at_utc": "2026-11-21T16:58:17.442621+00:00",
           "injury_report_at_utc": null
         },
         "PA3": {
           "model_version": "PA3_roster",
-          "home_probability": 0.5925047943776032,
-          "away_probability": 0.4074952056223968,
-          "home_margin": 2.975610966060587,
-          "recorded_at_utc": "2026-11-21T08:47:06.141988+00:00",
-          "injury_report_at_utc": "2026-11-21T08:30:00+00:00"
+          "home_probability": 0.5596240997503364,
+          "away_probability": 0.44037590024966355,
+          "home_margin": 1.8556692813691273,
+          "recorded_at_utc": "2026-11-21T16:58:17.442621+00:00",
+          "injury_report_at_utc": "2026-11-21T16:45:00+00:00"
         }
       }
     },
@@ -216,21 +216,21 @@
       "status": "scheduled",
       "score": null,
       "forecasts": {
-        "V1": {
-          "model_version": "V1_reference",
-          "home_probability": 0.6318322307373166,
-          "away_probability": 0.36816776926268335,
-          "home_margin": 4.123698826042595,
-          "recorded_at_utc": "2026-11-21T08:47:06.141988+00:00",
-          "injury_report_at_utc": null
-        },
         "PA3": {
           "model_version": "PA3_roster",
           "home_probability": 0.6019066785670235,
           "away_probability": 0.3980933214329765,
           "home_margin": 3.029882027908166,
-          "recorded_at_utc": "2026-11-21T08:47:06.141988+00:00",
-          "injury_report_at_utc": "2026-11-21T08:30:00+00:00"
+          "recorded_at_utc": "2026-11-21T16:58:17.442621+00:00",
+          "injury_report_at_utc": "2026-11-21T16:45:00+00:00"
+        },
+        "V1": {
+          "model_version": "V1_reference",
+          "home_probability": 0.6318322307373166,
+          "away_probability": 0.36816776926268335,
+          "home_margin": 4.123698826042595,
+          "recorded_at_utc": "2026-11-21T16:58:17.442621+00:00",
+          "injury_report_at_utc": null
         }
       }
     },
@@ -247,15 +247,15 @@
           "home_probability": 0.5509006904685537,
           "away_probability": 0.4490993095314463,
           "home_margin": 1.256429817724602,
-          "recorded_at_utc": "2026-11-21T08:47:06.141988+00:00",
-          "injury_report_at_utc": "2026-11-21T08:30:00+00:00"
+          "recorded_at_utc": "2026-11-21T16:58:17.442621+00:00",
+          "injury_report_at_utc": "2026-11-21T16:45:00+00:00"
         },
         "V1": {
           "model_version": "V1_reference",
           "home_probability": 0.6603468548488212,
           "away_probability": 0.33965314515117884,
           "home_margin": 5.1262149258938825,
-          "recorded_at_utc": "2026-11-21T08:47:06.141988+00:00",
+          "recorded_at_utc": "2026-11-21T16:58:17.442621+00:00",
           "injury_report_at_utc": null
         }
       }
@@ -273,7 +273,7 @@
           "home_probability": 0.9292193041890955,
           "away_probability": 0.07078069581090451,
           "home_margin": 20.06768521651924,
-          "recorded_at_utc": "2026-11-21T08:47:06.141988+00:00",
+          "recorded_at_utc": "2026-11-21T16:58:17.442621+00:00",
           "injury_report_at_utc": null
         }
       }
@@ -291,7 +291,7 @@
           "home_probability": 0.09148520454200312,
           "away_probability": 0.9085147954579968,
           "home_margin": -17.77359449008112,
-          "recorded_at_utc": "2026-11-21T08:47:06.141988+00:00",
+          "recorded_at_utc": "2026-11-21T16:58:17.442621+00:00",
           "injury_report_at_utc": null
         }
       }
