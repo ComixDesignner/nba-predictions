@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-11-24T16:28:45.525812+00:00",
+  "updated_at_utc": "2026-11-25T01:07:25.443344+00:00",
   "slate_date_et": "2026-11-24",
   "ratings_through_et": "2026-11-23",
   "teams": [
@@ -161,7 +161,7 @@
       "tip_at_utc": "2026-11-25T00:00:00+00:00",
       "away": "1610612765",
       "home": "1610612753",
-      "status": "scheduled",
+      "status": "live",
       "score": null,
       "forecasts": {
         "V1": {
@@ -221,7 +221,7 @@
           "home_probability": 0.6928490468549664,
           "away_probability": 0.3071509531450336,
           "home_margin": 6.3284610856822034,
-          "recorded_at_utc": "2026-11-24T16:28:45.525646+00:00",
+          "recorded_at_utc": "2026-11-25T01:07:25.443302+00:00",
           "injury_report_at_utc": null
         }
       }
@@ -589,9 +589,9 @@
         "model": "PA3",
         "n": 48,
         "accuracy": 0.6041666666666666,
-        "brier": 0.2355232632384057,
-        "log_loss": 0.6636306631355561,
-        "margin_mae": 9.806733700469366
+        "brier": 0.23552326323840567,
+        "log_loss": 0.6636306631355562,
+        "margin_mae": 9.806733700469367
       },
       {
         "model": "V1",
