@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-11-26T03:09:01.083788+00:00",
-  "slate_date_et": "2026-11-25",
-  "ratings_through_et": "2026-11-24",
+  "updated_at_utc": "2026-11-26T13:11:53.656164+00:00",
+  "slate_date_et": "2026-11-26",
+  "ratings_through_et": "2026-11-25",
   "teams": [
     {
       "id": "1610612737",
@@ -155,567 +155,337 @@
       "name": "Charlotte Hornets"
     }
   ],
-  "games": [
-    {
-      "id": "401909317",
-      "tip_at_utc": "2026-11-25T22:00:00+00:00",
-      "away": "1610612748",
-      "home": "1610612755",
-      "status": "final",
-      "score": [
-        104,
-        111
-      ],
-      "forecasts": {
-        "PA3": {
-          "model_version": "PA3_roster",
-          "home_probability": 0.4822554651530818,
-          "away_probability": 0.5177445348469182,
-          "home_margin": -0.41942521302456326,
-          "recorded_at_utc": "2026-11-25T20:13:31.712043+00:00",
-          "injury_report_at_utc": "2026-11-25T20:00:00+00:00"
-        },
-        "V1": {
-          "model_version": "V1_reference",
-          "home_probability": 0.48439278626138205,
-          "away_probability": 0.515607213738618,
-          "home_margin": -0.35680046903454077,
-          "recorded_at_utc": "2026-11-25T20:13:31.712043+00:00",
-          "injury_report_at_utc": null
-        }
-      }
-    },
-    {
-      "id": "401909318",
-      "tip_at_utc": "2026-11-26T00:00:00+00:00",
-      "away": "1610612741",
-      "home": "1610612766",
-      "status": "final",
-      "score": null,
-      "forecasts": {
-        "PA3": {
-          "model_version": "PA3_roster",
-          "home_probability": 0.6585363402801805,
-          "away_probability": 0.3414636597198195,
-          "home_margin": 5.527031329580047,
-          "recorded_at_utc": "2026-11-25T20:13:31.712043+00:00",
-          "injury_report_at_utc": "2026-11-25T20:00:00+00:00"
-        },
-        "V1": {
-          "model_version": "V1_reference",
-          "home_probability": 0.5100685765203153,
-          "away_probability": 0.48993142347968466,
-          "home_margin": 0.4318431714465276,
-          "recorded_at_utc": "2026-11-25T20:13:31.712043+00:00",
-          "injury_report_at_utc": null
-        }
-      }
-    },
-    {
-      "id": "401909319",
-      "tip_at_utc": "2026-11-26T00:30:00+00:00",
-      "away": "1610612739",
-      "home": "1610612752",
-      "status": "final",
-      "score": null,
-      "forecasts": {
-        "PA3": {
-          "model_version": "PA3_roster",
-          "home_probability": 0.6902017111464741,
-          "away_probability": 0.3097982888535259,
-          "home_margin": 6.069678455032541,
-          "recorded_at_utc": "2026-11-25T20:13:31.712043+00:00",
-          "injury_report_at_utc": "2026-11-25T20:00:00+00:00"
-        },
-        "V1": {
-          "model_version": "V1_reference",
-          "home_probability": 0.6912800178069937,
-          "away_probability": 0.30871998219300634,
-          "home_margin": 6.182529728979295,
-          "recorded_at_utc": "2026-11-25T20:13:31.712043+00:00",
-          "injury_report_at_utc": null
-        }
-      }
-    },
-    {
-      "id": "401909320",
-      "tip_at_utc": "2026-11-26T00:30:00+00:00",
-      "away": "1610612750",
-      "home": "1610612760",
-      "status": "live",
-      "score": null,
-      "forecasts": {
-        "PA3": {
-          "model_version": "PA3_roster",
-          "home_probability": 0.5671327593198742,
-          "away_probability": 0.43286724068012583,
-          "home_margin": 2.433068876277334,
-          "recorded_at_utc": "2026-11-25T20:13:31.712043+00:00",
-          "injury_report_at_utc": "2026-11-25T20:00:00+00:00"
-        },
-        "V1": {
-          "model_version": "V1_reference",
-          "home_probability": 0.46059783258655157,
-          "away_probability": 0.5394021674134484,
-          "home_margin": -1.1307817734748,
-          "recorded_at_utc": "2026-11-25T20:13:31.712043+00:00",
-          "injury_report_at_utc": null
-        }
-      }
-    },
-    {
-      "id": "401909321",
-      "tip_at_utc": "2026-11-26T01:00:00+00:00",
-      "away": "1610612746",
-      "home": "1610612763",
-      "status": "live",
-      "score": null,
-      "forecasts": {
-        "V1": {
-          "model_version": "V1_reference",
-          "home_probability": 0.7494817954953098,
-          "away_probability": 0.2505182045046902,
-          "home_margin": 8.45414281847987,
-          "recorded_at_utc": "2026-11-25T20:13:31.712043+00:00",
-          "injury_report_at_utc": null
-        },
-        "PA3": {
-          "model_version": "PA3_roster",
-          "home_probability": 0.7784021172417994,
-          "away_probability": 0.22159788275820058,
-          "home_margin": 9.70265804954068,
-          "recorded_at_utc": "2026-11-25T20:13:31.712043+00:00",
-          "injury_report_at_utc": "2026-11-25T20:00:00+00:00"
-        }
-      }
-    },
-    {
-      "id": "401909322",
-      "tip_at_utc": "2026-11-26T01:00:00+00:00",
-      "away": "1610612751",
-      "home": "1610612749",
-      "status": "live",
-      "score": null,
-      "forecasts": {
-        "V1": {
-          "model_version": "V1_reference",
-          "home_probability": 0.5999212046950081,
-          "away_probability": 0.4000787953049919,
-          "home_margin": 3.161022981116001,
-          "recorded_at_utc": "2026-11-25T20:13:31.712043+00:00",
-          "injury_report_at_utc": null
-        }
-      }
-    },
-    {
-      "id": "401909323",
-      "tip_at_utc": "2026-11-26T01:30:00+00:00",
-      "away": "1610612756",
-      "home": "1610612745",
-      "status": "live",
-      "score": null,
-      "forecasts": {
-        "V1": {
-          "model_version": "V1_reference",
-          "home_probability": 0.7206945021424197,
-          "away_probability": 0.2793054978575803,
-          "home_margin": 7.303594927084693,
-          "recorded_at_utc": "2026-11-25T20:13:31.712043+00:00",
-          "injury_report_at_utc": null
-        },
-        "PA3": {
-          "model_version": "PA3_roster",
-          "home_probability": 0.7332096970310696,
-          "away_probability": 0.26679030296893036,
-          "home_margin": 7.760989636591525,
-          "recorded_at_utc": "2026-11-25T20:13:31.712043+00:00",
-          "injury_report_at_utc": "2026-11-25T20:00:00+00:00"
-        }
-      }
-    },
-    {
-      "id": "401909324",
-      "tip_at_utc": "2026-11-26T03:00:00+00:00",
-      "away": "1610612758",
-      "home": "1610612744",
-      "status": "scheduled",
-      "score": null,
-      "forecasts": {
-        "V1": {
-          "model_version": "V1_reference",
-          "home_probability": 0.7629731764067861,
-          "away_probability": 0.23702682359321392,
-          "home_margin": 9.036183183647967,
-          "recorded_at_utc": "2026-11-25T20:13:31.712043+00:00",
-          "injury_report_at_utc": null
-        },
-        "PA3": {
-          "model_version": "PA3_roster",
-          "home_probability": 0.7023725563627138,
-          "away_probability": 0.2976274436372862,
-          "home_margin": 6.323110301819591,
-          "recorded_at_utc": "2026-11-25T20:13:31.712043+00:00",
-          "injury_report_at_utc": "2026-11-25T20:00:00+00:00"
-        }
-      }
-    },
-    {
-      "id": "401909325",
-      "tip_at_utc": "2026-11-26T03:00:00+00:00",
-      "away": "1610612759",
-      "home": "1610612757",
-      "status": "scheduled",
-      "score": null,
-      "forecasts": {
-        "V1": {
-          "model_version": "V1_reference",
-          "home_probability": 0.44290874024946664,
-          "away_probability": 0.5570912597505333,
-          "home_margin": -1.6870391354216556,
-          "recorded_at_utc": "2026-11-25T20:13:31.712043+00:00",
-          "injury_report_at_utc": null
-        },
-        "PA3": {
-          "model_version": "PA3_roster",
-          "home_probability": 0.4984691725045443,
-          "away_probability": 0.5015308274954557,
-          "home_margin": 0.183131362930824,
-          "recorded_at_utc": "2026-11-25T20:13:31.712043+00:00",
-          "injury_report_at_utc": "2026-11-25T20:00:00+00:00"
-        }
-      }
-    }
-  ],
+  "games": [],
   "rankings": [
     {
       "rank": 1,
       "team": "1610612759",
       "wins": 15,
-      "losses": 3,
-      "strength": 8.1762,
-      "sos": -0.6784,
-      "offense": 117.2935,
-      "defense": 109.0068,
-      "net": 8.2867
+      "losses": 4,
+      "strength": 7.7765,
+      "sos": -0.2964,
+      "offense": 117.1477,
+      "defense": 109.2167,
+      "net": 7.931
     },
     {
       "rank": 2,
       "team": "1610612750",
-      "wins": 13,
+      "wins": 14,
       "losses": 5,
-      "strength": 6.1875,
-      "sos": 0.3528,
-      "offense": 113.581,
-      "defense": 107.498,
-      "net": 6.083
+      "strength": 6.4181,
+      "sos": 0.5522,
+      "offense": 113.8047,
+      "defense": 107.597,
+      "net": 6.2077
     },
     {
       "rank": 3,
       "team": "1610612738",
       "wins": 12,
       "losses": 6,
-      "strength": 6.0494,
-      "sos": -3.1259,
-      "offense": 114.5794,
-      "defense": 108.2374,
-      "net": 6.3419
+      "strength": 6.1073,
+      "sos": -3.0409,
+      "offense": 114.6593,
+      "defense": 108.2552,
+      "net": 6.4041
     },
     {
       "rank": 4,
       "team": "1610612745",
-      "wins": 13,
+      "wins": 14,
       "losses": 5,
-      "strength": 5.2879,
-      "sos": 0.8362,
-      "offense": 118.6509,
-      "defense": 113.1839,
-      "net": 5.467
+      "strength": 5.4688,
+      "sos": 0.6954,
+      "offense": 118.8426,
+      "defense": 113.1649,
+      "net": 5.6777
     },
     {
       "rank": 5,
       "team": "1610612757",
-      "wins": 11,
+      "wins": 12,
       "losses": 6,
-      "strength": 5.0271,
-      "sos": 1.9687,
-      "offense": 115.3409,
-      "defense": 110.3088,
-      "net": 5.0321
+      "strength": 5.3078,
+      "sos": 2.4029,
+      "offense": 115.5378,
+      "defense": 110.2634,
+      "net": 5.2744
     },
     {
       "rank": 6,
       "team": "1610612752",
-      "wins": 11,
+      "wins": 12,
       "losses": 6,
-      "strength": 4.4796,
-      "sos": -0.86,
-      "offense": 114.0935,
-      "defense": 109.748,
-      "net": 4.3455
+      "strength": 5.1331,
+      "sos": -0.7578,
+      "offense": 114.6031,
+      "defense": 109.5649,
+      "net": 5.0383
     },
     {
       "rank": 7,
       "team": "1610612765",
       "wins": 11,
       "losses": 6,
-      "strength": 4.2774,
-      "sos": -1.682,
-      "offense": 113.6642,
-      "defense": 109.4266,
-      "net": 4.2375
+      "strength": 4.3246,
+      "sos": -1.6067,
+      "offense": 113.7509,
+      "defense": 109.4618,
+      "net": 4.2891
     },
     {
       "rank": 8,
       "team": "1610612760",
       "wins": 10,
-      "losses": 8,
-      "strength": 3.537,
-      "sos": 0.7793,
-      "offense": 114.2202,
-      "defense": 110.9323,
-      "net": 3.2879
+      "losses": 9,
+      "strength": 3.2258,
+      "sos": 1.1692,
+      "offense": 114.2288,
+      "defense": 111.1474,
+      "net": 3.0814
     },
     {
       "rank": 9,
       "team": "1610612747",
       "wins": 15,
       "losses": 3,
-      "strength": 3.1221,
-      "sos": -1.936,
-      "offense": 116.2605,
-      "defense": 113.1756,
-      "net": 3.0849
+      "strength": 3.0161,
+      "sos": -2.0188,
+      "offense": 116.199,
+      "defense": 113.2271,
+      "net": 2.9718
     },
     {
       "rank": 10,
       "team": "1610612763",
-      "wins": 13,
+      "wins": 14,
       "losses": 5,
-      "strength": 2.3804,
-      "sos": -2.3382,
-      "offense": 116.7696,
-      "defense": 114.5051,
-      "net": 2.2645
+      "strength": 2.8251,
+      "sos": -2.5199,
+      "offense": 116.6934,
+      "defense": 113.9104,
+      "net": 2.783
     },
     {
       "rank": 11,
       "team": "1610612737",
       "wins": 11,
       "losses": 6,
-      "strength": 1.9557,
-      "sos": -2.6705,
-      "offense": 112.3792,
-      "defense": 110.4092,
-      "net": 1.97
+      "strength": 1.9394,
+      "sos": -2.6927,
+      "offense": 112.4155,
+      "defense": 110.4594,
+      "net": 1.9562
     },
     {
       "rank": 12,
-      "team": "1610612748",
-      "wins": 10,
-      "losses": 6,
-      "strength": 1.7834,
-      "sos": -0.0275,
-      "offense": 117.237,
-      "defense": 115.6582,
-      "net": 1.5788
-    },
-    {
-      "rank": 13,
       "team": "1610612743",
       "wins": 10,
       "losses": 6,
-      "strength": 1.541,
-      "sos": 0.9583,
-      "offense": 115.9747,
-      "defense": 114.6295,
-      "net": 1.3452
+      "strength": 1.5781,
+      "sos": 1.0098,
+      "offense": 115.981,
+      "defense": 114.5929,
+      "net": 1.3881
+    },
+    {
+      "rank": 13,
+      "team": "1610612748",
+      "wins": 10,
+      "losses": 7,
+      "strength": 1.3396,
+      "sos": -0.0776,
+      "offense": 116.6794,
+      "defense": 115.4995,
+      "net": 1.1799
     },
     {
       "rank": 14,
       "team": "1610612739",
       "wins": 9,
-      "losses": 9,
-      "strength": 1.0289,
-      "sos": -0.7298,
-      "offense": 116.4392,
-      "defense": 115.5443,
-      "net": 0.8949
+      "losses": 10,
+      "strength": 0.4608,
+      "sos": -0.2669,
+      "offense": 116.2808,
+      "defense": 115.9886,
+      "net": 0.2922
     },
     {
       "rank": 15,
       "team": "1610612756",
       "wins": 9,
-      "losses": 7,
-      "strength": 0.696,
-      "sos": 0.654,
-      "offense": 114.4011,
-      "defense": 113.7084,
-      "net": 0.6928
+      "losses": 8,
+      "strength": 0.3926,
+      "sos": 1.139,
+      "offense": 114.2731,
+      "defense": 113.9216,
+      "net": 0.3514
     },
     {
       "rank": 16,
-      "team": "1610612742",
-      "wins": 11,
-      "losses": 7,
-      "strength": 0.0434,
-      "sos": 1.5657,
-      "offense": 112.7552,
-      "defense": 112.7619,
-      "net": -0.0067
+      "team": "1610612755",
+      "wins": 15,
+      "losses": 4,
+      "strength": 0.3188,
+      "sos": -1.5663,
+      "offense": 114.8571,
+      "defense": 114.7908,
+      "net": 0.0664
     },
     {
       "rank": 17,
-      "team": "1610612755",
-      "wins": 14,
-      "losses": 4,
-      "strength": -0.0128,
-      "sos": -1.774,
-      "offense": 115.015,
-      "defense": 115.2404,
-      "net": -0.2254
+      "team": "1610612742",
+      "wins": 11,
+      "losses": 7,
+      "strength": -0.0184,
+      "sos": 1.4477,
+      "offense": 112.7487,
+      "defense": 112.8173,
+      "net": -0.0686
     },
     {
       "rank": 18,
       "team": "1610612761",
       "wins": 6,
       "losses": 11,
-      "strength": -0.4027,
-      "sos": -0.7188,
-      "offense": 113.3808,
-      "defense": 113.6891,
-      "net": -0.3082
+      "strength": -0.3428,
+      "sos": -0.6151,
+      "offense": 113.4801,
+      "defense": 113.7275,
+      "net": -0.2475
     },
     {
       "rank": 19,
       "team": "1610612744",
-      "wins": 9,
+      "wins": 10,
       "losses": 8,
-      "strength": -0.9665,
-      "sos": 2.3627,
-      "offense": 111.4488,
-      "defense": 112.576,
-      "net": -1.1272
+      "strength": -0.4493,
+      "sos": 1.6634,
+      "offense": 111.9464,
+      "defense": 112.6064,
+      "net": -0.66
     },
     {
       "rank": 20,
       "team": "1610612754",
       "wins": 6,
       "losses": 12,
-      "strength": -2.8032,
-      "sos": -0.2954,
-      "offense": 111.466,
-      "defense": 114.0264,
-      "net": -2.5604
+      "strength": -2.7265,
+      "sos": -0.1697,
+      "offense": 111.5984,
+      "defense": 114.0762,
+      "net": -2.4777
     },
     {
       "rank": 21,
       "team": "1610612753",
       "wins": 7,
       "losses": 10,
-      "strength": -2.988,
-      "sos": -0.7477,
-      "offense": 111.4676,
-      "defense": 113.9475,
-      "net": -2.4799
+      "strength": -2.8871,
+      "sos": -0.6564,
+      "offense": 111.5651,
+      "defense": 113.9503,
+      "net": -2.3852
     },
     {
       "rank": 22,
       "team": "1610612741",
-      "wins": 5,
+      "wins": 6,
       "losses": 12,
-      "strength": -3.1318,
-      "sos": 0.8282,
-      "offense": 113.1292,
-      "defense": 116.0465,
-      "net": -2.9173
+      "strength": -2.9898,
+      "sos": 0.2685,
+      "offense": 113.4586,
+      "defense": 116.192,
+      "net": -2.7334
     },
     {
       "rank": 23,
       "team": "1610612746",
       "wins": 4,
-      "losses": 12,
-      "strength": -3.2401,
-      "sos": 1.4303,
-      "offense": 112.5335,
-      "defense": 115.9284,
-      "net": -3.3949
+      "losses": 13,
+      "strength": -3.7627,
+      "sos": 1.6479,
+      "offense": 111.8851,
+      "defense": 115.8811,
+      "net": -3.9961
     },
     {
       "rank": 24,
       "team": "1610612766",
       "wins": 4,
-      "losses": 12,
-      "strength": -4.3475,
-      "sos": -0.6441,
-      "offense": 108.9883,
-      "defense": 113.5438,
-      "net": -4.5554
+      "losses": 13,
+      "strength": -4.3966,
+      "sos": -0.9457,
+      "offense": 109.2697,
+      "defense": 113.9295,
+      "net": -4.6598
     },
     {
       "rank": 25,
       "team": "1610612762",
       "wins": 3,
       "losses": 16,
-      "strength": -4.4643,
-      "sos": 3.7374,
-      "offense": 109.3263,
-      "defense": 113.9063,
-      "net": -4.58
+      "strength": -4.5181,
+      "sos": 3.6283,
+      "offense": 109.3602,
+      "defense": 113.9931,
+      "net": -4.6328
     },
     {
       "rank": 26,
       "team": "1610612764",
       "wins": 7,
       "losses": 12,
-      "strength": -5.5659,
-      "sos": -1.3112,
-      "offense": 111.0841,
-      "defense": 116.4705,
-      "net": -5.3864
+      "strength": -5.5464,
+      "sos": -1.2971,
+      "offense": 111.0832,
+      "defense": 116.4427,
+      "net": -5.3595
     },
     {
       "rank": 27,
       "team": "1610612740",
       "wins": 5,
       "losses": 14,
-      "strength": -6.071,
-      "sos": 0.8747,
-      "offense": 111.3007,
-      "defense": 117.2943,
-      "net": -5.9936
+      "strength": -6.0484,
+      "sos": 0.8826,
+      "offense": 111.3381,
+      "defense": 117.3117,
+      "net": -5.9736
     },
     {
       "rank": 28,
       "team": "1610612749",
       "wins": 2,
-      "losses": 16,
-      "strength": -6.7628,
-      "sos": 1.6192,
-      "offense": 110.7522,
-      "defense": 117.5667,
-      "net": -6.8145
+      "losses": 17,
+      "strength": -7.112,
+      "sos": 1.1255,
+      "offense": 109.9867,
+      "defense": 117.1118,
+      "net": -7.1251
     },
     {
       "rank": 29,
-      "team": "1610612758",
-      "wins": 2,
-      "losses": 15,
-      "strength": -7.0242,
-      "sos": 4.1091,
-      "offense": 109.9781,
-      "defense": 116.6881,
-      "net": -6.71
+      "team": "1610612751",
+      "wins": 4,
+      "losses": 13,
+      "strength": -7.2206,
+      "sos": -1.1568,
+      "offense": 110.7024,
+      "defense": 118.0308,
+      "net": -7.3284
     },
     {
       "rank": 30,
-      "team": "1610612751",
-      "wins": 3,
-      "losses": 13,
-      "strength": -7.7924,
-      "sos": -0.7067,
-      "offense": 111.1589,
-      "defense": 119.0116,
-      "net": -7.8527
+      "team": "1610612758",
+      "wins": 2,
+      "losses": 16,
+      "strength": -7.6134,
+      "sos": 3.8957,
+      "offense": 109.9584,
+      "defense": 117.2033,
+      "net": -7.2449
     }
   ],
   "historical": {
@@ -740,25 +510,25 @@
     ]
   },
   "prospective": {
-    "graded": 51,
+    "graded": 58,
     "target": 200,
     "minimum": 20,
     "rows": [
       {
         "model": "PA3",
-        "n": 51,
-        "accuracy": 0.6078431372549019,
-        "brier": 0.2296297836254357,
-        "log_loss": 0.650491206614651,
-        "margin_mae": 9.686174954857455
+        "n": 58,
+        "accuracy": 0.603448275862069,
+        "brier": 0.2245310616615982,
+        "log_loss": 0.6391034750615439,
+        "margin_mae": 9.55026646720125
       },
       {
         "model": "V1",
-        "n": 51,
-        "accuracy": 0.5882352941176471,
-        "brier": 0.22539613162553312,
-        "log_loss": 0.6409874093770861,
-        "margin_mae": 9.722752933117357
+        "n": 58,
+        "accuracy": 0.603448275862069,
+        "brier": 0.21672645474412383,
+        "log_loss": 0.6222618795482722,
+        "margin_mae": 9.446069818348047
       }
     ]
   }
