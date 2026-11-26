@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-11-25T20:13:31.712578+00:00",
+  "updated_at_utc": "2026-11-26T03:09:01.083788+00:00",
   "slate_date_et": "2026-11-25",
   "ratings_through_et": "2026-11-24",
   "teams": [
@@ -161,8 +161,11 @@
       "tip_at_utc": "2026-11-25T22:00:00+00:00",
       "away": "1610612748",
       "home": "1610612755",
-      "status": "scheduled",
-      "score": null,
+      "status": "final",
+      "score": [
+        104,
+        111
+      ],
       "forecasts": {
         "PA3": {
           "model_version": "PA3_roster",
@@ -187,7 +190,7 @@
       "tip_at_utc": "2026-11-26T00:00:00+00:00",
       "away": "1610612741",
       "home": "1610612766",
-      "status": "scheduled",
+      "status": "final",
       "score": null,
       "forecasts": {
         "PA3": {
@@ -213,7 +216,7 @@
       "tip_at_utc": "2026-11-26T00:30:00+00:00",
       "away": "1610612739",
       "home": "1610612752",
-      "status": "scheduled",
+      "status": "final",
       "score": null,
       "forecasts": {
         "PA3": {
@@ -239,7 +242,7 @@
       "tip_at_utc": "2026-11-26T00:30:00+00:00",
       "away": "1610612750",
       "home": "1610612760",
-      "status": "scheduled",
+      "status": "live",
       "score": null,
       "forecasts": {
         "PA3": {
@@ -265,7 +268,7 @@
       "tip_at_utc": "2026-11-26T01:00:00+00:00",
       "away": "1610612746",
       "home": "1610612763",
-      "status": "scheduled",
+      "status": "live",
       "score": null,
       "forecasts": {
         "V1": {
@@ -291,7 +294,7 @@
       "tip_at_utc": "2026-11-26T01:00:00+00:00",
       "away": "1610612751",
       "home": "1610612749",
-      "status": "scheduled",
+      "status": "live",
       "score": null,
       "forecasts": {
         "V1": {
@@ -309,7 +312,7 @@
       "tip_at_utc": "2026-11-26T01:30:00+00:00",
       "away": "1610612756",
       "home": "1610612745",
-      "status": "scheduled",
+      "status": "live",
       "score": null,
       "forecasts": {
         "V1": {
@@ -737,25 +740,25 @@
     ]
   },
   "prospective": {
-    "graded": 50,
+    "graded": 51,
     "target": 200,
     "minimum": 20,
     "rows": [
       {
         "model": "PA3",
-        "n": 50,
-        "accuracy": 0.62,
-        "brier": 0.2288611912306674,
-        "log_loss": 0.6489154048540129,
-        "margin_mae": 9.731509949694113
+        "n": 51,
+        "accuracy": 0.6078431372549019,
+        "brier": 0.2296297836254357,
+        "log_loss": 0.650491206614651,
+        "margin_mae": 9.686174954857455
       },
       {
         "model": "V1",
-        "n": 50,
-        "accuracy": 0.6,
-        "brier": 0.22458703828085777,
-        "log_loss": 0.639309974374124,
-        "margin_mae": 9.770071982399013
+        "n": 51,
+        "accuracy": 0.5882352941176471,
+        "brier": 0.22539613162553312,
+        "log_loss": 0.6409874093770861,
+        "margin_mae": 9.722752933117357
       }
     ]
   }
