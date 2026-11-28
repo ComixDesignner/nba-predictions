@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-11-27T22:58:31.957853+00:00",
+  "updated_at_utc": "2026-11-28T04:58:54.134788+00:00",
   "slate_date_et": "2026-11-27",
   "ratings_through_et": "2026-11-26",
   "teams": [
@@ -161,8 +161,11 @@
       "tip_at_utc": "2026-11-28T00:00:00+00:00",
       "away": "1610612748",
       "home": "1610612752",
-      "status": "scheduled",
-      "score": null,
+      "status": "final",
+      "score": [
+        108,
+        105
+      ],
       "forecasts": {
         "V1": {
           "model_version": "V1_reference",
@@ -187,8 +190,11 @@
       "tip_at_utc": "2026-11-28T00:30:00+00:00",
       "away": "1610612749",
       "home": "1610612765",
-      "status": "scheduled",
-      "score": null,
+      "status": "final",
+      "score": [
+        98,
+        113
+      ],
       "forecasts": {
         "V1": {
           "model_version": "V1_reference",
@@ -213,8 +219,11 @@
       "tip_at_utc": "2026-11-28T00:30:00+00:00",
       "away": "1610612755",
       "home": "1610612754",
-      "status": "scheduled",
-      "score": null,
+      "status": "final",
+      "score": [
+        111,
+        87
+      ],
       "forecasts": {
         "V1": {
           "model_version": "V1_reference",
@@ -239,8 +248,11 @@
       "tip_at_utc": "2026-11-28T00:30:00+00:00",
       "away": "1610612751",
       "home": "1610612761",
-      "status": "scheduled",
-      "score": null,
+      "status": "final",
+      "score": [
+        100,
+        124
+      ],
       "forecasts": {
         "PA3": {
           "model_version": "PA3_roster",
@@ -265,8 +277,11 @@
       "tip_at_utc": "2026-11-28T01:00:00+00:00",
       "away": "1610612737",
       "home": "1610612738",
-      "status": "scheduled",
-      "score": null,
+      "status": "final",
+      "score": [
+        87,
+        86
+      ],
       "forecasts": {
         "V1": {
           "model_version": "V1_reference",
@@ -291,8 +306,11 @@
       "tip_at_utc": "2026-11-28T01:30:00+00:00",
       "away": "1610612763",
       "home": "1610612750",
-      "status": "scheduled",
-      "score": null,
+      "status": "final",
+      "score": [
+        114,
+        109
+      ],
       "forecasts": {
         "V1": {
           "model_version": "V1_reference",
@@ -317,7 +335,7 @@
       "tip_at_utc": "2026-11-28T02:00:00+00:00",
       "away": "1610612742",
       "home": "1610612756",
-      "status": "scheduled",
+      "status": "final",
       "score": null,
       "forecasts": {
         "V1": {
@@ -343,7 +361,7 @@
       "tip_at_utc": "2026-11-28T02:30:00+00:00",
       "away": "1610612747",
       "home": "1610612759",
-      "status": "scheduled",
+      "status": "live",
       "score": null,
       "forecasts": {
         "V1": {
@@ -369,7 +387,7 @@
       "tip_at_utc": "2026-11-28T02:30:00+00:00",
       "away": "1610612743",
       "home": "1610612762",
-      "status": "scheduled",
+      "status": "final",
       "score": null,
       "forecasts": {
         "PA3": {
@@ -395,7 +413,7 @@
       "tip_at_utc": "2026-11-28T02:30:00+00:00",
       "away": "1610612740",
       "home": "1610612746",
-      "status": "scheduled",
+      "status": "live",
       "score": null,
       "forecasts": {
         "V1": {
@@ -421,7 +439,7 @@
       "tip_at_utc": "2026-11-28T02:30:00+00:00",
       "away": "1610612744",
       "home": "1610612757",
-      "status": "scheduled",
+      "status": "live",
       "score": null,
       "forecasts": {
         "V1": {
@@ -797,25 +815,25 @@
     ]
   },
   "prospective": {
-    "graded": 58,
+    "graded": 64,
     "target": 200,
     "minimum": 20,
     "rows": [
       {
         "model": "PA3",
-        "n": 58,
-        "accuracy": 0.603448275862069,
-        "brier": 0.2245310616615982,
-        "log_loss": 0.6391034750615439,
-        "margin_mae": 9.55026646720125
+        "n": 64,
+        "accuracy": 0.578125,
+        "brier": 0.22946422111303216,
+        "log_loss": 0.6477447178414206,
+        "margin_mae": 9.717559654171836
       },
       {
         "model": "V1",
-        "n": 58,
-        "accuracy": 0.603448275862069,
-        "brier": 0.21672645474412378,
-        "log_loss": 0.6222618795482722,
-        "margin_mae": 9.446069818348048
+        "n": 64,
+        "accuracy": 0.59375,
+        "brier": 0.22335372375577817,
+        "log_loss": 0.6349664920984434,
+        "margin_mae": 9.576367247875867
       }
     ]
   }
